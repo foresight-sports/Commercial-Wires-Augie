@@ -1,0 +1,51 @@
+{
+  "app": {
+    "name": "Foresight Sports",
+    "fullName": "Foresight Bay Management",
+    "tagline": "Golf simulator facility management"
+  },
+  "navigation": {
+    "activity": "Activity",
+    "reporting": "Reporting",
+    "locations": "Locations",
+    "profile": "My Profile",
+    "accountSettings": "Account Settings",
+    "teamManagement": "Team Management",
+    "billing": "Billing",
+    "logout": "Log Out"
+  },
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "refresh": "Refresh",
+    "viewDetails": "View Details",
+    "close": "Close",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "finish": "Finish"
+  },
+  "status": {
+    "loading": "Loading...",
+    "saving": "Saving...",
+    "success": "Success",
+    "error": "Error",
+    "noResults": "No results found",
+    "tryAgain": "Try again"
+  },
+  "time": {
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "tomorrow": "Tomorrow",
+    "thisWeek": "This Week",
+    "thisMonth": "This Month",
+    "lastMonth": "Last Month",
+    "custom": "Custom Range"
+  }
+}

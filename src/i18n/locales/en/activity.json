@@ -1,0 +1,53 @@
+{
+  "page": {
+    "title": "Activity",
+    "subtitle": "Recent bookings and customer activity"
+  },
+  "table": {
+    "columns": {
+      "timestamp": "Time",
+      "type": "Type",
+      "customer": "Customer",
+      "bay": "Bay",
+      "status": "Status",
+      "amount": "Amount"
+    },
+    "types": {
+      "booking": "Booking",
+      "checkin": "Check-in",
+      "checkout": "Check-out",
+      "cancellation": "Cancellation"
+    },
+    "empty": {
+      "title": "No recent activity",
+      "description": "Activity will appear here as bookings are created and customers check in"
+    }
+  },
+  "bayStatus": {
+    "title": "Bay Status",
+    "subtitle": "Current availability across all bays",
+    "statuses": {
+      "available": "Available",
+      "in_use": "In Use",
+      "maintenance": "Maintenance",
+      "offline": "Offline"
+    },
+    "bayCard": {
+      "currentBooking": "Current Booking",
+      "nextBooking": "Next Booking",
+      "customerName": "Customer",
+      "timeRemaining": "{{minutes}} min remaining",
+      "startsIn": "Starts in {{minutes}} min",
+      "maintenanceNote": "Maintenance Note",
+      "deviceStatus": "Device Status",
+      "noBookings": "No bookings scheduled"
+    },
+    "actions": {
+      "createBooking": "Create Booking",
+      "viewDetails": "View Details",
+      "markMaintenance": "Mark for Maintenance",
+      "markAvailable": "Mark as Available",
+      "extendBooking": "Extend Booking"
+    }
+  }
+}

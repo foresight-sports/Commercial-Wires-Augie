@@ -1,0 +1,20 @@
+{
+  "page": {
+    "title": "Locations",
+    "subtitle": "Manage facilities, bays, and equipment"
+  },
+  "locationList": {
+    "title": "Your Locations",
+    "addLocation": "Add Location",
+    "empty": {
+      "title": "No locations yet",
+      "description": "Add your first location to get started",
+      "action": "Add Location"
+    }
+  },
+  "locationCard": {
+    "bays": "{{count}} Bays",
+    "devices": "{{count}} Devices",
+    "viewDetails": "View Details"
+  }
+}

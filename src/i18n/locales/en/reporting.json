@@ -1,0 +1,28 @@
+{
+  "page": {
+    "title": "Reporting",
+    "subtitle": "Business analytics and insights"
+  },
+  "overview": {
+    "title": "Overview",
+    "dateRange": "Date Range",
+    "metrics": {
+      "revenue": {
+        "title": "Total Revenue",
+        "subtitle": "{{percentage}}% from last period"
+      },
+      "bookings": {
+        "title": "Total Bookings",
+        "subtitle": "{{count}} bookings"
+      },
+      "utilization": {
+        "title": "Bay Utilization",
+        "subtitle": "Average across all bays"
+      },
+      "avgBookingValue": {
+        "title": "Avg. Booking Value",
+        "subtitle": "Per booking"
+      }
+    }
+  }
+}

@@ -1,0 +1,365 @@
+{
+  "page": {
+    "title": "Settings",
+    "subtitle": "Manage your account and facility configurations"
+  },
+  "navigation": {
+    "locations": "Locations",
+    "staff": "Staff",
+    "bayManagement": "Bay Management",
+    "membership": "Membership",
+    "pricing": "Pricing",
+    "services": "Services",
+    "banking": "Banking",
+    "branding": "Branding",
+    "policies": "Policies",
+    "roleAccess": "Role Access"
+  },
+  "locations": {
+    "title": "Locations",
+    "subtitle": "Manage your facility locations and their settings",
+    "addLocation": "Add Location",
+    "listTitle": "Locations",
+    "empty": {
+      "title": "No locations configured",
+      "description": "Add your first location to get started with bay management",
+      "action": "Add Location"
+    },
+    "modal": {
+      "title": "Add New Location",
+      "editTitle": "Edit Location",
+      "subtitle": "Enter the details for the new location",
+      "editSubtitle": "Update the location details",
+      "addButton": "Add Location",
+      "fields": {
+        "name": "Location Name",
+        "address": "Address",
+        "city": "City",
+        "state": "State",
+        "postalCode": "ZIP Code",
+        "phone": "Phone Number",
+        "email": "Email",
+        "website": "Website URL",
+        "timezone": "Time Zone",
+        "operatingHours": "Operating Hours",
+        "status": "Status"
+      },
+      "placeholders": {
+        "name": "Downtown Golf Club",
+        "address": "123 Main Street",
+        "city": "New York",
+        "state": "NY",
+        "postalCode": "10001",
+        "phone": "(212) 555-0100",
+        "email": "location@golfclub.com",
+        "website": "https://location.golfclub.com",
+        "timezone": "EST (UTC-5)",
+        "operatingHours": "9:00 AM - 11:00 PM"
+      },
+      "hints": {
+        "website": "Optional website URL for this location",
+        "timezone": "Select the timezone for this location",
+        "operatingHours": "Enter operating hours (e.g., 9:00 AM - 11:00 PM)",
+        "status": "Set the location status"
+      },
+      "status": {
+        "active": "Active",
+        "inactive": "Inactive"
+      }
+    }
+  },
+  "staff": {
+    "title": "Staff",
+    "subtitle": "Manage staff members, roles, and permissions",
+    "addStaff": "Add Staff",
+    "roles": {
+      "owner": "Owner",
+      "manager": "Manager",
+      "staff": "Staff",
+      "coach": "Coach"
+    },
+    "table": {
+      "columns": {
+        "name": "Name",
+        "email": "Email",
+        "role": "Role",
+        "status": "Status",
+        "actions": "Actions"
+      }
+    },
+    "empty": {
+      "title": "No staff members",
+      "description": "Add staff members to manage your facility operations",
+      "action": "Add Staff Member"
+    },
+    "modal": {
+      "title": "Add New Staff Member",
+      "editTitle": "Edit Staff Member",
+      "subtitle": "Enter the details for the new staff member",
+      "editSubtitle": "Update the staff member details",
+      "addButton": "Add Staff",
+      "fields": {
+        "photo": "Photo",
+        "fullName": "Full Name",
+        "email": "Email",
+        "phone": "Phone Number",
+        "role": "Role",
+        "assignedLocation": "Assigned Location",
+        "status": "Status"
+      },
+      "placeholders": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "john@golfclub.com",
+        "phone": "(212) 555-0100",
+        "role": "Select a role",
+        "assignedLocation": "Select a location"
+      },
+      "hints": {
+        "status": "Default status for new staff members",
+        "photo": "Upload a profile photo for this staff member"
+      },
+      "uploadPhoto": "Upload Photo",
+      "changePhoto": "Change Photo"
+    }
+  },
+      "bayManagement": {
+        "title": "Bay Management",
+        "subtitle": "Configure simulator bays, devices, and equipment",
+        "addBay": "Add Bay",
+        "empty": {
+          "title": "No bays configured",
+          "description": "Set up your simulator bays to start accepting bookings",
+          "action": "Add Bay"
+        },
+        "modal": {
+          "title": "Add New Bay",
+          "editTitle": "Edit Bay",
+          "subtitle": "Enter the details for the new bay",
+          "editSubtitle": "Update the bay details",
+          "addButton": "Add Bay",
+          "fields": {
+            "bayName": "Bay Name",
+            "location": "Location",
+            "simulatorType": "Simulator Type",
+            "maxPlayers": "Max Players per Reservation",
+            "notes": "Notes",
+            "operationalStatus": "Operational Status"
+          },
+          "placeholders": {
+            "bayName": "Bay 1",
+            "location": "Select a location",
+            "simulatorTypeOther": "e.g., TrackMan 4, SkyTrak, Full Swing G",
+            "maxPlayers": "4",
+            "notes": "Additional information about this bay..."
+          },
+          "hints": {
+            "maxPlayers": "Maximum number of players allowed per booking",
+            "operationalStatus": "Mark bay as operational and available for bookings"
+          },
+          "status": {
+            "on": "On",
+            "off": "Off"
+          }
+        },
+        "table": {
+          "columns": {
+            "bayName": "Bay Name",
+            "simulatorType": "Simulator Type",
+            "maxPlayers": "Max Players per Reservation",
+            "notes": "Notes",
+            "actions": "Actions"
+          }
+        }
+      },
+  "membership": {
+    "title": "Membership Plans",
+    "subtitle": "Configure membership tiers and benefits",
+    "addPlan": "Add Membership Tier",
+    "empty": {
+      "title": "No membership plans",
+      "description": "Create membership plans to offer recurring revenue options",
+      "action": "Add Membership Plan"
+    },
+    "table": {
+      "title": "Membership Plans",
+      "subtitle": "Configure membership tiers and benefits",
+      "allLocations": "All Locations",
+      "columns": {
+        "planName": "Plan Name",
+        "initiationFee": "Initiation Fee",
+        "price": "Price",
+        "length": "Length",
+        "availableLocations": "Available Locations",
+        "keyBenefits": "Key Benefits",
+        "status": "Status",
+        "actions": "Actions"
+      }
+    },
+    "modal": {
+      "title": "Add New Membership Tier",
+      "editTitle": "Edit Membership Tier",
+      "subtitle": "Create a new membership tier with benefits",
+      "editSubtitle": "Update the membership tier details",
+      "addButton": "Add Membership Tier",
+      "template": {
+        "label": "Start from Template (Optional)",
+        "hint": "Select an existing membership tier to use as a starting point",
+        "scratch": "Start from scratch"
+      },
+      "basicInfo": {
+        "title": "Basic Information",
+        "planName": "Plan Name *",
+        "planNamePlaceholder": "Premium, Elite, etc.",
+        "initiationFee": "Initiation Fee",
+        "price": "Price *",
+        "lengthMonths": "Length (Months) *"
+      },
+      "benefits": {
+        "title": "Membership Benefits",
+        "freeSimulatorTime": {
+          "label": "Free/Included Simulator Time",
+          "hint": "Include complimentary simulator hours",
+          "hoursPerMonth": "Hours per Month"
+        },
+        "advanceBooking": {
+          "label": "Advance Booking Window",
+          "hint": "Allow booking further in advance",
+          "daysInAdvance": "Days in Advance"
+        },
+        "freeLessons": {
+          "label": "Free Lessons / Coaching",
+          "hint": "Include complimentary lessons",
+          "numberOfLessons": "Number of Lessons"
+        },
+        "peakAccess": {
+          "label": "Peak vs Off-Peak Access Rules",
+          "hint": "Define access to peak hours",
+          "accessType": "Access Type",
+          "guestRatePerHour": "Guest rate per hour"
+        },
+        "discount": {
+          "label": "Discount Structure",
+          "hint": "Apply discounts to additional bookings",
+          "discountType": "Discount Type",
+          "discountTypePlaceholder": "Select discount type",
+          "percentage": "Discount Percentage (%)",
+          "amount": "Discount Amount ($)"
+        },
+        "maxReservations": {
+          "label": "Maximum Reservations or Time Booked",
+          "hint": "Limit concurrent reservations",
+          "maxActiveReservations": "Maximum Active Reservations"
+        },
+        "maxDailyUsage": {
+          "label": "Maximum Daily Usage",
+          "hint": "Limit hours per day",
+          "maxHoursPerDay": "Maximum Hours per Day"
+        }
+      },
+      "locationAvailability": {
+        "title": "Location Availability",
+        "hint": "Select which locations can offer this membership plan.",
+        "selectAll": "Select All"
+      },
+      "discountTypes": {
+        "fixedReduction": "Fixed Reduction",
+        "flatBookingRate": "Flat Booking Rate",
+        "percentageDiscount": "Percentage Discount"
+      },
+      "peakAccessTypes": {
+        "peakHoursOnly": "Peak Hours Only",
+        "offPeakHoursOnly": "Off-Peak Hours Only",
+        "bothPeakOffPeak": "Both Peak & Off-Peak"
+      }
+    }
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Configure pricing rules, rates, and packages",
+    "empty": {
+      "title": "No pricing configured",
+      "description": "Set up your pricing structure to define booking rates",
+      "action": "Configure Pricing"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Manage additional services and offerings",
+    "addService": "Add Service",
+    "empty": {
+      "title": "No services configured",
+      "description": "Add services like lessons, club fitting, or equipment rental",
+      "action": "Add Service"
+    }
+  },
+  "banking": {
+    "title": "Banking",
+    "subtitle": "Configure payment methods, bank accounts, and financial settings",
+    "empty": {
+      "title": "No banking information",
+      "description": "Connect your bank account to receive payments",
+      "action": "Connect Bank Account"
+    }
+  },
+  "branding": {
+    "title": "Branding",
+    "subtitle": "Customize logos, colors, and brand assets",
+    "empty": {
+      "title": "Default branding",
+      "description": "Upload your logo and customize brand colors",
+      "action": "Customize Branding"
+    }
+  },
+  "policies": {
+    "title": "Policies",
+    "subtitle": "Manage terms of service, privacy policy, and facility policies",
+    "addPolicy": "Add Policy",
+    "empty": {
+      "title": "No policies configured",
+      "description": "Set up your terms of service and facility policies",
+      "action": "Add Policy"
+    }
+  },
+  "roleAccess": {
+    "title": "Role-Based Access Control",
+    "subtitle": "Define permissions for different user roles",
+    "roles": {
+      "owner": {
+        "name": "Owner",
+        "description": "Full access to all features across all locations"
+      },
+      "manager": {
+        "name": "Manager",
+        "description": "Location-level management access"
+      },
+      "staff": {
+        "name": "Staff",
+        "description": "Basic operational access across single location"
+      },
+      "coach": {
+        "name": "Coach",
+        "description": "Manager level access"
+      }
+    },
+    "permissions": {
+      "manageLocations": "Manage Locations",
+      "manageStaff": "Manage Staff",
+      "addEditBays": "Add/Edit Bays",
+      "addEditMemberships": "Add/Edit Memberships",
+      "addEditPricing": "Add/Edit Pricing",
+      "addEditServices": "Add/Edit Services",
+      "viewReports": "View Reports",
+      "editBanking": "Edit Banking",
+      "manageBookings": "Manage Bookings",
+      "manageLocalStaff": "Manage Local Staff",
+      "editCorporateSettings": "Edit Corporate Settings"
+    },
+    "empty": {
+      "title": "Default roles active",
+      "description": "Customize role permissions and access levels",
+      "action": "Configure Roles"
+    }
+  }
+}
+

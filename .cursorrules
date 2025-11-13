@@ -1,0 +1,239 @@
+# Foresight Sports Bay Management Application - Development Rules
+
+## Project Overview
+
+This is a B2B bay management application for Foresight Sports golf simulators. It enables facility owners, managers, and staff to manage simulator bays, bookings, and operations.
+
+## Technology Stack
+
+- **Framework**: React 19.1 with TypeScript 5.9
+- **Styling**: Tailwind CSS v4.1
+- **UI Components**: Untitled UI React (with React Aria for accessibility)
+- **Routing**: React Router v7
+- **Data Layer**: GraphQL (mocked for wireframes, will integrate with live API)
+- **Build Tool**: Vite 7.1
+- **Package Manager**: npm (primary), bun available
+
+## Code Quality Standards
+
+### General Principles
+
+1. **Write production-quality code**: Even though this is a wireframe/prototype, every component should be clean, maintainable, and ready for production.
+2. **Composition over duplication**: Create reusable components and utility functions.
+3. **Type safety first**: Use TypeScript strictly. No `any` types unless absolutely necessary.
+4. **Accessibility is non-negotiable**: Leverage React Aria components and follow WCAG 2.1 AA standards.
+
+### File Organization
+
+```
+src/
+├── components/
+│   ├── base/           # Untitled UI base components
+│   ├── application/    # Untitled UI application components
+│   ├── foundations/    # Icons, logos, patterns
+│   ├── marketing/      # Marketing site components (if needed)
+│   └── domain/         # Custom business logic components
+│       ├── activity/
+│       ├── reporting/
+│       ├── locations/
+│       └── shared/
+├── pages/              # Route-level page components
+├── layouts/            # Layout wrappers (AppLayout, AuthLayout)
+├── graphql/            # GraphQL queries, mutations, fragments, mocks
+│   ├── queries/
+│   ├── mutations/
+│   ├── fragments/
+│   └── mocks/
+├── hooks/              # Custom React hooks
+├── providers/          # Context providers
+├── types/              # Shared TypeScript types and interfaces
+├── utils/              # Utility functions
+├── config/             # App configuration
+└── i18n/               # Internationalization files
+```
+
+### Naming Conventions
+
+- **Components**: PascalCase (e.g., `BayStatusCard.tsx`)
+- **Hooks**: camelCase with `use` prefix (e.g., `useBayStatus.ts`)
+- **Utils**: camelCase (e.g., `formatDateTime.ts`)
+- **Types**: PascalCase with descriptive names (e.g., `BayStatus`, `BookingInput`)
+- **GraphQL**:
+    - Queries: SCREAMING_SNAKE_CASE (e.g., `GET_BAY_STATUS`)
+    - Types: PascalCase matching backend schema
+    - Fragments: PascalCase with `Fragment` suffix (e.g., `BayDetailFragment`)
+
+### Component Structure
+
+```tsx
+import type { FC, ReactNode } from "react";
+import { SomeIcon } from "@untitledui/icons";
+import { Button } from "@/components/base/buttons/button";
+import { cx } from "@/utils/cx";
+
+interface ComponentProps {
+    /** JSDoc description of the prop */
+    propName: string;
+    /** Optional prop with default value */
+    optionalProp?: boolean;
+    /** Child content */
+    children?: ReactNode;
+}
+
+export const ComponentName: FC<ComponentProps> = ({ propName, optionalProp = false, children }) => {
+    // Hooks first
+    const [state, setState] = useState();
+
+    // Derived values
+    const computedValue = useMemo(() => {
+        return someCalculation(propName);
+    }, [propName]);
+
+    // Event handlers
+    const handleClick = () => {
+        // handler logic
+    };
+
+    // Early returns for conditional rendering
+    if (!propName) return null;
+
+    return <div className={cx("base-classes", optionalProp && "conditional-class")}>{children}</div>;
+};
+```
+
+## GraphQL Guidelines
+
+### Mock Data Structure
+
+- Create realistic, comprehensive mock data that mirrors production schema
+- Use consistent naming conventions matching GraphQL schema
+- Include edge cases (empty states, errors, loading states)
+- Mock data should be typed with GraphQL-generated or hand-written types
+
+### Query Patterns
+
+```tsx
+// Example query structure (mocked for now)
+const GET_BAYS = gql`
+    query GetBays($locationId: ID!, $date: DateTime) {
+        bays(locationId: $locationId, date: $date) {
+            ...BayDetailFragment
+        }
+    }
+`;
+```
+
+### Mock Implementation
+
+- For now, create JSON mock data files in `src/graphql/mocks/`
+- Use custom hooks to simulate GraphQL queries: `useQuery`, `useMutation`
+- Implement loading and error states
+- Prepare for easy swap to Apollo Client or similar
+
+## Internationalization (i18n) Preparation
+
+### Key Requirements
+
+1. **No hardcoded strings**: All user-facing text must be externalizable
+2. **Use translation keys**: Even if not implementing i18n library yet, structure code for it
+3. **Namespace translations**: Group by feature/page (e.g., `activity.bayStatus.title`)
+4. **Date/time formatting**: Use locale-aware formatting utilities
+5. **Number formatting**: Currency, percentages, decimals must respect locale
+
+### Recommended Pattern (Prepare for react-i18next or similar)
+
+```tsx
+// Instead of:
+<h1>Bay Status</h1>;
+
+// Use structure that's ready for i18n:
+const t = {
+    activity: {
+        bayStatus: {
+            title: "Bay Status",
+            subtitle: "Real-time bay availability",
+        },
+    },
+};
+
+<h1>{t.activity.bayStatus.title}</h1>;
+```
+
+## Untitled UI Component Usage
+
+### Adding New Components
+
+```bash
+npx untitledui@latest add [component-name]
+```
+
+### Available Component Categories
+
+- **Base**: buttons, inputs, select, checkbox, radio, toggle, badges, avatars, etc.
+- **Application**: tables, modals, slideovers, pagination, tabs, date-pickers, navigation
+- **Foundations**: icons, logos, patterns
+
+### Component Customization
+
+- Extend Untitled UI components rather than modifying them directly
+- Use composition to add business logic
+- Leverage Tailwind's `cx` utility for conditional classes
+
+## State Management
+
+### Current Approach (Start Simple)
+
+- React Context for global state (auth, user, current location)
+- Local component state for UI interactions
+- Custom hooks for shared logic
+
+### Future Considerations
+
+- Prepare for GraphQL cache (Apollo/URQL)
+- Consider Zustand or Jotai for complex client state
+
+## Role-Based Access Control (RBAC)
+
+### User Roles
+
+- `Owner`: Full access to all features
+- `Manager`: Access to operations, limited settings
+- `Staff`: Day-to-day operations only
+
+### Implementation Pattern
+
+```tsx
+// Use role checks in routing and component rendering
+const canAccessBilling = user.role === "Owner";
+const canManageTeam = ["Owner", "Manager"].includes(user.role);
+```
+
+## Performance Considerations
+
+1. **Code splitting**: Use React.lazy() for route-level chunks
+2. **Memoization**: Use useMemo/useCallback appropriately (not prematurely)
+3. **Virtualization**: For large lists (bookings, customers), consider react-window
+4. **Image optimization**: Use appropriate formats and lazy loading
+
+## Testing Philosophy (Future)
+
+- Prepare components for testing: separate logic from presentation
+- Use semantic HTML and ARIA labels
+- Avoid brittle selectors (test by role, label, text)
+
+## Git Workflow
+
+- Clear, descriptive commit messages
+- Branch naming: `feature/`, `fix/`, `refactor/`
+- Keep commits atomic and focused
+
+## Additional Notes
+
+- **Mobile-first**: Untitled UI components are responsive; leverage this
+- **Dark mode ready**: Tailwind theme is configured for it
+- **Icons**: Use `@untitledui/icons` package (lucide-react based)
+- **Forms**: Use React Aria form components for accessibility
+
+---
+
+Remember: This is not just a wireframe. This is the foundation of a production application. Write code you'd be proud to ship.
